@@ -1,17 +1,22 @@
 *** Settings ***
-Library     SeleniumLibrary
-Resource    ../Resource/Keywords/homePage.robot
+Library             SeleniumLibrary
+Resource            ../Resource/Keywords/homePage.robot
+
+Suite Setup         navigate to the website
+Suite Teardown      Close browser
+Test Template       Enter a number with less than six digits
 
 
-*** Test Cases ***
+*** Test Cases ***    customerNumber
+customer number1    12345
+customer number2    3412
+customer number3    980
+customer number4    12
+customer number5    7
+
+
+*** Keywords ***
 MeDirect negatif login test
-    navigate to the website
-    Maximize Browser Window
-    Set Browser Implicit Wait    15
-    click login button
-    Switch Window    url:https://login.medirect.com.mt/account/login
-    Sleep    3
-    type in your customer number
-    click submit
-    verify the unsuccesfull login
+    [Arguments]    ${customerNum}
+    Enter a number with less than six digits    ${customerNum}
 

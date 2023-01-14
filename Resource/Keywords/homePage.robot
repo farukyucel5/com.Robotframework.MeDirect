@@ -7,17 +7,19 @@ Variables       ../TestData/testData.py
 *** Keywords ***
 navigate to the website
     Open Browser    ${Url}    ${BROWSER}
-
-click login button
+    Maximize Browser Window
+    Set Browser Implicit Wait    15
     Click Element    ${loginBtn}
+    Switch Window    url:https://login.medirect.com.mt/account/login
+    Sleep    3
 
-type in your customer number
-    Input Text    ${customerNumber}    12345
-    Click Button    ${cookie}
-
-click submit
+Enter a number with less than six digits
+    [Arguments]    ${customerNumberInput}
+    Input Text    ${customerNumber}    ${customerNumberInput}
+    Sleep    2s
     Click Button    ${submitBtn}
-
-verify the unsuccesfull login
     Element Should Be Visible    ${unsuccessfulLoginText}
+
+Close browser
+    Close All Browsers
 
