@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230115 01:00:47.931" rpa="false" schemaversion="3">
+<suite id="s1" name="MeDirect.RobotFramework.Test" source="C:\Asoftware\MeDirect.RobotFramework.Test">
+<suite id="s1-s1" name="Tests" source="C:\Asoftware\MeDirect.RobotFramework.Test\Tests">
+<suite id="s1-s1-s1" name="meDirect" source="C:\Asoftware\MeDirect.RobotFramework.Test\Tests\meDirect.robot">
+<kw name="navigate to the website" library="homePage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230115 01:00:48.385" level="INFO">Opening browser 'chrome' to base url 'https://www.medirect.com.mt/'.</msg>
+<status status="PASS" starttime="20230115 01:00:48.384" endtime="20230115 01:01:06.364"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230115 01:01:06.364" endtime="20230115 01:01:06.637"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>15</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230115 01:01:06.638" endtime="20230115 01:01:06.641"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230115 01:01:06.644" level="INFO">Clicking element '(//*[text()='Login'])[1]'.</msg>
+<status status="PASS" starttime="20230115 01:01:06.642" endtime="20230115 01:01:06.852"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>url:https://login.medirect.com.mt/account/login</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230115 01:01:06.853" endtime="20230115 01:01:09.719"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${cookie}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20230115 01:01:09.721" level="INFO">Simulating Mouse Down on element '//*[text()='Close']'.</msg>
+<status status="PASS" starttime="20230115 01:01:09.720" endtime="20230115 01:01:10.022"/>
+</kw>
+<kw name="Mouse Up" library="SeleniumLibrary">
+<arg>${cookie}</arg>
+<doc>Simulates releasing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20230115 01:01:10.029" level="INFO">Simulating Mouse Up on element '//*[text()='Close']'.</msg>
+<status status="PASS" starttime="20230115 01:01:10.023" endtime="20230115 01:01:10.351"/>
+</kw>
+<status status="PASS" starttime="20230115 01:00:48.382" endtime="20230115 01:01:10.351"/>
+</kw>
+<test id="s1-s1-s1-t1" name="customer number1" line="11">
+<kw name="Enter a number with less than six digits" library="homePage">
+<arg>12345</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${customerNumber}</arg>
+<arg>${customerNumberInput}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230115 01:01:10.357" level="INFO">Typing text '12345' into text field 'txtUsername'.</msg>
+<status status="PASS" starttime="20230115 01:01:10.355" endtime="20230115 01:01:10.517"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submitBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230115 01:01:10.518" level="INFO">Clicking button 'btnNextToPassword'.</msg>
+<status status="PASS" starttime="20230115 01:01:10.517" endtime="20230115 01:01:25.680"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${unsuccessfulLoginText}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230115 01:01:25.721" level="INFO">Element '//*[text()='The details you entered are incorrect. Please try again.']' is displayed.</msg>
+<status status="PASS" starttime="20230115 01:01:25.681" endtime="20230115 01:01:25.721"/>
+</kw>
+<status status="PASS" starttime="20230115 01:01:10.354" endtime="20230115 01:01:25.722"/>
+</kw>
+<status status="PASS" starttime="20230115 01:01:10.352" endtime="20230115 01:01:25.724"/>
+</test>
+<test id="s1-s1-s1-t2" name="customer number2" line="12">
+<kw name="Enter a number with less than six digits" library="homePage">
+<arg>3412</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${customerNumber}</arg>
+<arg>${customerNumberInput}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230115 01:01:25.731" level="INFO">Typing text '3412' into text field 'txtUsername'.</msg>
+<status status="PASS" starttime="20230115 01:01:25.729" endtime="20230115 01:01:25.871"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submitBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230115 01:01:25.872" level="INFO">Clicking button 'btnNextToPassword'.</msg>
+<status status="PASS" starttime="20230115 01:01:25.871" endtime="20230115 01:01:40.990"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${unsuccessfulLoginText}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230115 01:01:41.019" level="INFO">Element '//*[text()='The details you entered are incorrect. Please try again.']' is displayed.</msg>
+<status status="PASS" starttime="20230115 01:01:40.990" endtime="20230115 01:01:41.020"/>
+</kw>
+<status status="PASS" starttime="20230115 01:01:25.728" endtime="20230115 01:01:41.021"/>
+</kw>
+<status status="PASS" starttime="20230115 01:01:25.726" endtime="20230115 01:01:41.022"/>
+</test>
+<test id="s1-s1-s1-t3" name="customer number3" line="13">
+<kw name="Enter a number with less than six digits" library="homePage">
+<arg>980</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${customerNumber}</arg>
+<arg>${customerNumberInput}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230115 01:01:41.033" level="INFO">Typing text '980' into text field 'txtUsername'.</msg>
+<status status="PASS" starttime="20230115 01:01:41.031" endtime="20230115 01:01:41.165"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submitBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230115 01:01:41.168" level="INFO">Clicking button 'btnNextToPassword'.</msg>
+<status status="PASS" starttime="20230115 01:01:41.165" endtime="20230115 01:01:56.261"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${unsuccessfulLoginText}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230115 01:01:56.287" level="INFO">Element '//*[text()='The details you entered are incorrect. Please try again.']' is displayed.</msg>
+<status status="PASS" starttime="20230115 01:01:56.261" endtime="20230115 01:01:56.288"/>
+</kw>
+<status status="PASS" starttime="20230115 01:01:41.029" endtime="20230115 01:01:56.288"/>
+</kw>
+<status status="PASS" starttime="20230115 01:01:41.026" endtime="20230115 01:01:56.290"/>
+</test>
+<test id="s1-s1-s1-t4" name="customer number4" line="14">
+<kw name="Enter a number with less than six digits" library="homePage">
+<arg>12</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${customerNumber}</arg>
+<arg>${customerNumberInput}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230115 01:01:56.299" level="INFO">Typing text '12' into text field 'txtUsername'.</msg>
+<status status="PASS" starttime="20230115 01:01:56.297" endtime="20230115 01:01:56.412"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submitBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230115 01:01:56.413" level="INFO">Clicking button 'btnNextToPassword'.</msg>
+<status status="PASS" starttime="20230115 01:01:56.412" endtime="20230115 01:02:11.543"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${unsuccessfulLoginText}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230115 01:02:11.568" level="INFO">Element '//*[text()='The details you entered are incorrect. Please try again.']' is displayed.</msg>
+<status status="PASS" starttime="20230115 01:02:11.544" endtime="20230115 01:02:11.569"/>
+</kw>
+<status status="PASS" starttime="20230115 01:01:56.295" endtime="20230115 01:02:11.570"/>
+</kw>
+<status status="PASS" starttime="20230115 01:01:56.293" endtime="20230115 01:02:11.571"/>
+</test>
+<test id="s1-s1-s1-t5" name="customer number5" line="15">
+<kw name="Enter a number with less than six digits" library="homePage">
+<arg>7</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${customerNumber}</arg>
+<arg>${customerNumberInput}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230115 01:02:11.579" level="INFO">Typing text '7' into text field 'txtUsername'.</msg>
+<status status="PASS" starttime="20230115 01:02:11.577" endtime="20230115 01:02:11.682"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submitBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230115 01:02:11.683" level="INFO">Clicking button 'btnNextToPassword'.</msg>
+<status status="PASS" starttime="20230115 01:02:11.682" endtime="20230115 01:02:26.841"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${unsuccessfulLoginText}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230115 01:02:26.869" level="INFO">Element '//*[text()='The details you entered are incorrect. Please try again.']' is displayed.</msg>
+<status status="PASS" starttime="20230115 01:02:26.841" endtime="20230115 01:02:26.870"/>
+</kw>
+<status status="PASS" starttime="20230115 01:02:11.576" endtime="20230115 01:02:26.870"/>
+</kw>
+<status status="PASS" starttime="20230115 01:02:11.574" endtime="20230115 01:02:26.872"/>
+</test>
+<kw name="Close browser" library="homePage" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230115 01:02:26.878" endtime="20230115 01:02:33.430"/>
+</kw>
+<status status="PASS" starttime="20230115 01:02:26.876" endtime="20230115 01:02:33.431"/>
+</kw>
+<status status="PASS" starttime="20230115 01:00:47.996" endtime="20230115 01:02:33.431"/>
+</suite>
+<status status="PASS" starttime="20230115 01:00:47.990" endtime="20230115 01:02:33.445"/>
+</suite>
+<status status="PASS" starttime="20230115 01:00:47.941" endtime="20230115 01:02:33.457"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="MeDirect.RobotFramework.Test">MeDirect.RobotFramework.Test</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s1" name="Tests">MeDirect.RobotFramework.Test.Tests</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s1-s1" name="meDirect">MeDirect.RobotFramework.Test.Tests.meDirect</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

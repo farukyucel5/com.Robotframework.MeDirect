@@ -11,15 +11,14 @@ navigate to the website
     Set Browser Implicit Wait    15
     Click Element    ${loginBtn}
     Switch Window    url:https://login.medirect.com.mt/account/login
-    Sleep    3
+    Mouse Down    ${cookie}
+    Mouse Up    ${cookie} 
 
 Enter a number with less than six digits
     [Arguments]    ${customerNumberInput}
-    Input Text    ${customerNumber}    ${customerNumberInput}
-    Sleep    2s
+    Input Text    ${customerNumber}    ${customerNumberInput}    
     Click Button    ${submitBtn}
     Element Should Be Visible    ${unsuccessfulLoginText}
 
 Close browser
     Close All Browsers
-
